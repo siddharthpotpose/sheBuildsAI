@@ -271,18 +271,18 @@
 			);
 		}
 
-		// Function to add animation class when element is in viewport
+		// Function to trigger animation when element is in viewport
 		function animateOnScroll() {
 			var animatedElements = document.querySelectorAll('.animate-on-scroll');
 			
-			animatedElements.forEach(function(element, index) {
-				if (isElementInViewport(element) && !element.classList.contains('animate__animated')) {
-					// Add animation classes with staggered delay based on index
-					var animationType = 'animate__fadeInUp';
-					var delay = (index % 3) * 0.2; // Stagger animations in groups of 3
+			animatedElements.forEach(function(element) {
+				// Check if element is in viewport and hasn't been animated yet
+				if (isElementInViewport(element) && !element.classList.contains('has-animated')) {
+					// Add a class to mark that this element has been animated
+					element.classList.add('has-animated');
 					
-					element.style.animationDelay = delay + 's';
-					element.classList.add('animate__animated', animationType);
+					// Force reflow to ensure animation plays
+					void element.offsetWidth;
 				}
 			});
 		}

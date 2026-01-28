@@ -136,12 +136,12 @@ body {
 }
 
 .section {
-  padding-top: 30px;
-  margin-top: 120px;
+      padding-top: 30px;
+    margin-top: 20px;
 }
 
 .section-heading {
-  margin-bottom: 60px;
+  margin-bottom: 45px;
 }
 
 .section-heading h2 {
@@ -733,6 +733,7 @@ Banner Style
   line-height: 70px;
   width: 60%;
   margin-bottom: 40px;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .main-banner .item p {
@@ -826,7 +827,7 @@ Services Style
 
 .services .service-item {
   position: relative;
-  margin-top: 95px;
+  margin-top: 25px;
 }
 
 .services .service-item .icon {
@@ -849,10 +850,10 @@ Services Style
 
 .services .service-item .main-content {
   border-radius: 25px;
-  padding: 80px 30px 50px 30px;
+  padding: 35px 30px 50px 30px;
   background-color: #f1f0fe;
   margin-bottom: 30px;
-  margin-right: 80px;
+  /* margin-right: 80px; */
   transition: all .4s;
 }
 
@@ -878,7 +879,7 @@ About Style
 .about-us {
   position: relative;
   padding: 0px;
-  margin-top: 130px;
+  margin-top: 60px;
 }
 
 .about-us:before {
@@ -973,7 +974,7 @@ Courses Style
 */
 
 .courses {
-  margin-top: 75px;
+  margin-top: 30px;
 }
 
 .event_filter {
@@ -985,7 +986,7 @@ Courses Style
   border-radius: 50px;
   padding: 15px 40px;
   list-style: none;
-  margin: 0 auto 70px;
+  margin: 0 auto 38px;
   max-width: max-content;
 }
 
@@ -1165,8 +1166,23 @@ Testimonials Style
 
 .testimonials {
   position: relative;
-  padding: 80px 0px;
-  margin-top: 150px;
+  padding: 40px 0px;
+  margin-top: 50px;
+}
+
+.testimonials .equal-height-row {
+  display: flex;
+  align-items: stretch;
+}
+
+.testimonials .equal-height-row > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.testimonials .owl-carousel {
+  height: 100%;
 }
 
 .testimonials:before {
@@ -1187,6 +1203,10 @@ Testimonials Style
   margin-bottom: 0px;
   margin-left: 60px;
   vertical-align: middle;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .testimonials .section-heading p {
@@ -1197,6 +1217,10 @@ Testimonials Style
   background-color: #779FF6;
   border-radius: 25px;
   padding: 80px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .testimonials .item p {
@@ -1273,7 +1297,7 @@ Contact Style
 */
 
 .contact-us {
-  margin-top: 80px;
+  margin-top: 30px;
   position: relative;
   padding: 50px 0px;
 }
@@ -1494,31 +1518,17 @@ Footer Style
 --------------------------------------------- 
 */
 
+/* 
+---------------------------------------------
+Footer Style
+--------------------------------------------- 
+*/
 footer {
-  margin-top: 150px;
+  margin-top: 60px;
   position: relative;
-  background-color: #779FF6;
-  vertical-align: middle;
-  min-height: 150px;
-  border-radius: 150px 150px 0px 0px;
-}
-
-footer p {
-  text-align: center;
-  line-height: 150px;
-  color: #fff;
-  font-weight: 400;
-}
-
-footer p a {
-  color: #fff;
-  transition: all .3s;
-  position: relative;
-  z-index: 3;
-}
-
-footer p a:hover {
-  opacity: 0.75;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 80px 0 30px;
+  border-radius: 0;
 }
 
 footer::before {
@@ -1526,12 +1536,209 @@ footer::before {
   position: absolute;
   left: 30px;
   transform: rotate(180deg);
-  opacity: 1;
+  opacity: 0.1;
   bottom: 0;
   width: 318px;
   height: 119px;
   content: '';
   z-index: 2;
+}
+
+/* Footer About Section */
+.footer-about {
+  margin-bottom: 30px;
+}
+
+.footer-logo {
+  margin-bottom: 25px;
+}
+
+.footer-logo img {
+  max-width: 180px;
+  height: auto;
+}
+
+.footer-description {
+  color: #a0a0a0;
+  font-size: 14px;
+  line-height: 26px;
+  margin-bottom: 10px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-social .social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(119, 159, 246, 0.1);
+  border-radius: 50%;
+  color: #779FF6;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.footer-social .social-icon:hover {
+  background: #779FF6;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Footer Links */
+.footer-links {
+  margin-bottom: 30px;
+}
+
+.footer-links h4 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.footer-links h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #779FF6, #A2F0FE);
+  border-radius: 2px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+  color: #a0a0a0;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links ul li a:hover {
+  color: #779FF6;
+  padding-left: 5px;
+}
+
+/* Footer Contact */
+.footer-contact {
+  margin-bottom: 30px;
+}
+
+.footer-contact h4 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.footer-contact h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, #779FF6, #A2F0FE);
+  border-radius: 2px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.contact-item i {
+  color: #779FF6;
+  font-size: 18px;
+  margin-right: 15px;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.contact-info h5 {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.contact-info p {
+  color: #a0a0a0;
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 3px;
+}
+
+.contact-info p a {
+  color: #a0a0a0;
+  transition: all 0.3s ease;
+}
+
+.contact-info p a:hover {
+  color: #779FF6;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  /* margin-top: 50px; */
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom .col-lg-12 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.copyright-text p {
+  color: #a0a0a0;
+  font-size: 14px;
+  margin: 0;
+}
+
+.copyright-text p a {
+  color: #779FF6;
+  transition: all 0.3s ease;
+}
+
+.copyright-text p a:hover {
+  color: #A2F0FE;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-bottom-links a {
+  color: #a0a0a0;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.footer-bottom-links a:hover {
+  color: #779FF6;
 }
 
 /* 
@@ -1552,10 +1759,80 @@ body {
     border-right: none;
   }
   .main-banner .item {
-    padding: 80px 30px 120px 30px !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    background-image: none !important;
+  }
+  .main-banner .item::before {
+    content: '';
+    display: block;
+    width: 100%;
+    min-height: 250px;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    /* margin-bottom: 30px; */
+  }
+  .main-banner .item-1::before {
+    background-image: url(../images/carosal-4.jpeg);
+  }
+  .main-banner .header-text {
+    padding: 20px !important;
+    width: 100% !important;
+  }
+  .main-banner .item h2 {
+    font-size: 28px !important;
+    line-height: 40px !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+  .main-banner .item p {
+    display: none !important;
+  }
+  .main-banner .item .buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    margin-top: 30px !important;
+    width: 100% !important;
+  }
+  .main-banner .item .buttons .main-button {
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+  .main-banner .item .buttons .main-button a {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .main-banner .item .buttons .icon-button {
+    width: 100% !important;
+  }
+  .main-banner .item .buttons .icon-button a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
   }
   .main-banner .owl-nav {
-    left: 30px !important;
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: 20px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .main-banner .owl-nav .owl-prev i {
+    position: relative !important;
+    bottom: 0 !important;
+    margin-right: 15px;
+  }
+  .main-banner .owl-nav .owl-next i {
+    position: relative !important;
+    bottom: 0 !important;
   }
   .event_filter  {
     padding: 15px 20px;
@@ -1581,9 +1858,31 @@ body {
     padding-top: 100px;
   }
   .main-banner .item {
-    padding: 100px 60px 140px 60px;
-    margin-left: 0px;
-    text-align: center;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    background-image: none !important;
+  }
+  .main-banner .item::before {
+    content: '';
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    margin-bottom: 30px;
+  }
+  .main-banner .item-1::before {
+    background-image: url(../images/carosal-4.jpeg);
+  }
+  .main-banner .header-text {
+    padding: 30px !important;
+    width: 100% !important;
   }
   .main-banner .item h2,
   .main-banner .item p {
@@ -1594,31 +1893,36 @@ body {
     line-height: 50px;
   }
   .main-banner .item .buttons {
-    display: inline-block;
-    text-align: center;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+    justify-content: center !important;
   }
   .main-banner .item .buttons .main-button {
     margin-right: 0px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
   }
   .main-banner .owl-nav {
     left: 50% !important;
-    transform: translateX(-60px) !important;
-    bottom: 60px;
+    transform: translateX(-50%);
+    bottom: 30px !important;
+    text-align: center !important;
+    width: 100% !important;
   }
   .main-banner .owl-nav .owl-prev i {
-    bottom: 0px;
+    position: relative !important;
+    bottom: 0 !important;
+    margin-right: 15px;
   }
   .main-banner .owl-nav .owl-next i {
-    bottom: 0px;
-    position: absolute;
-    left: 65px;
+    position: relative !important;
+    bottom: 0 !important;
   }
   .services {
-    margin-top: 80px;
+    margin-top: 15px;
   }
   .about-us {
-    margin-top: 100px;
+    margin-top: 30px;
   }
   .accordion {
     padding: 40px 25px 10px 25px;
@@ -1650,7 +1954,7 @@ body {
     color: #fff;
   }
   .courses {
-    margin-top: 100px;
+    margin-top: 10px;
   }
   .event_filter ul li {
     display: block;
@@ -1751,6 +2055,23 @@ body {
   }
   footer {
     margin-top: 30px;
+    padding: 60px 0 30px;
+  }
+
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    margin-bottom: 40px;
+  }
+
+  .footer-bottom .col-lg-12 {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
   }
 }
 
@@ -1772,7 +2093,7 @@ Features Section
 --------------------------------------------- 
 */
 .features {
-  padding: 80px 0px;
+  padding: 40px 0px;
   background-color: #fff;
 }
 
@@ -1825,7 +2146,7 @@ How It Works Section
 --------------------------------------------- 
 */
 .how-it-works {
-  padding: 80px 0px;
+  padding: 40px 0px;
   background-color: #f1f0fe;
 }
 
@@ -1999,7 +2320,7 @@ FAQ Section
 --------------------------------------------- 
 */
 .faq {
-  padding: 80px 0px;
+  padding: 40px 0px;
   background-color: #f1f0fe;
 }
 
@@ -2091,59 +2412,6 @@ Partners Section
   filter: grayscale(0%);
 }
 
-/* 
----------------------------------------------
-Technology Section
---------------------------------------------- 
-*/
-.technology {
-  padding: 80px 0px;
-  background-color: #f1f0fe;
-}
-
-.technology .tech-item {
-  background-color: #fff;
-  border-radius: 25px;
-  padding: 40px 30px;
-  text-align: center;
-  margin-bottom: 30px;
-  transition: all 0.3s ease;
-  height: 100%;
-}
-
-.technology .tech-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 10px 30px rgba(119, 159, 246, 0.2);
-}
-
-.technology .tech-item .tech-icon {
-  width: 80px;
-  height: 80px;
-  background-color: #f1f0fe;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.technology .tech-item .tech-icon i {
-  color: #a2f1fd;
-  font-size: 32px;
-}
-
-.technology .tech-item h4 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #1e1e1e;
-}
-
-.technology .tech-item p {
-  color: #4a4a4a;
-  line-height: 1.6;
-  margin: 0;
-  font-size: 14px;
-}
 
 /* Responsive Styles */
 @media (max-width: 991px) {
@@ -2158,6 +2426,60 @@ Technology Section
   .pricing .pricing-card.featured:hover {
     transform: translateY(-10px);
   }
+
+  /* Banner/Carousel Tablet Styles */
+  .main-banner {
+    padding: 140px 0 100px 0 !important;
+  }
+
+  .main-banner .item {
+    margin-left: 0 !important;
+    padding: 80px 60px !important;
+    height: auto !important;
+    min-height: 480px;
+    background-size: contain !important;
+    background-position: center top !important;
+  }
+
+  .main-banner .item h2 {
+    font-size: 36px !important;
+    line-height: 50px !important;
+    width: 100% !important;
+  }
+
+  .main-banner .item p {
+    font-size: 16px !important;
+    line-height: 28px !important;
+    width: 100% !important;
+  }
+
+  .main-banner .item .buttons {
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+  }
+
+  .main-banner .item .buttons .main-button {
+    margin-right: 0 !important;
+  }
+
+  .main-banner .owl-nav {
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: 30px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .main-banner .owl-nav .owl-prev i {
+    position: relative !important;
+    bottom: 0 !important;
+    margin-right: 15px;
+  }
+
+  .main-banner .owl-nav .owl-next i {
+    position: relative !important;
+    bottom: 0 !important;
+  }
 }
 
 @media (max-width: 767px) {
@@ -2171,5 +2493,586 @@ Technology Section
   
   .how-it-works .step-item {
     padding: 30px 15px;
+  }
+
+  .hide-on-small {
+    display: none;
+  }
+
+  /* Footer Mobile Responsive Styles */
+  footer {
+    padding: 50px 0 20px;
+  }
+
+  .footer-about,
+  .footer-links,
+  .footer-contact {
+    margin-bottom: 5px;
+  }
+
+  .footer-logo img {
+    max-width: 150px;
+  }
+
+  .footer-description {
+    font-size: 13px;
+    line-height: 24px;
+  }
+
+  .footer-social {
+    gap: 10px;
+  }
+
+  .footer-social .social-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .footer-links h4,
+  .footer-contact h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .footer-links ul li a {
+    font-size: 13px;
+  }
+
+  .contact-item {
+    margin-bottom: 15px;
+  }
+
+  .contact-item i {
+    font-size: 16px;
+    margin-right: 12px;
+  }
+
+  .contact-info h5 {
+    font-size: 13px;
+  }
+
+  .contact-info p {
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    margin-top: 35px;
+    padding-top: 25px;
+  }
+
+  .footer-bottom .col-lg-12 {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .copyright-text p {
+    font-size: 13px;
+  }
+
+  .footer-bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-bottom-links a {
+    font-size: 13px;
+  }
+
+  .responsive-heading {
+    font-size: 35px !important;
+  }
+
+  .fun-facts .section-heading p {
+    max-width: 100% !important;
+    margin: 0 0 20px 0 !important;
+    padding: 0 15px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Banner/Carousel Responsive Styles */
+  .main-banner {
+    padding: 100px 0 5px 0 !important;
+  }
+
+  .main-banner .item {
+    margin-left: 0 !important;
+    padding: 2px 20px !important;
+    height: auto !important;
+    min-height: 500px;
+    border-radius: 15px !important;
+    background-size: contain !important;
+    background-position: center top !important;
+  }
+
+  .main-banner .item h2 {
+    font-size: 28px !important;
+    line-height: 40px !important;
+    width: 100% !important;
+    margin-bottom: 20px !important;
+  }
+
+  .main-banner .item p {
+    display: none !important;
+  }
+
+  .main-banner .item .buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+    margin-top: 30px !important;
+  }
+
+  .main-banner .item .buttons .main-button {
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
+  .main-banner .item .buttons .main-button a {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .main-banner .item .buttons .icon-button {
+    width: 100% !important;
+  }
+
+  .main-banner .item .buttons .icon-button a {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  .main-banner .owl-nav {
+    left: 50% !important;
+    transform: translateX(-50%);
+    bottom: 20px !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .main-banner .owl-nav .owl-prev i {
+    position: relative !important;
+    bottom: 0 !important;
+    margin-right: 15px;
+  }
+
+  .main-banner .owl-nav .owl-next i {
+    position: relative !important;
+    bottom: 0 !important;
+  }
+}
+
+/* 
+---------------------------------------------
+Philosophy Section Styles
+--------------------------------------------- 
+*/
+.philosophy-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></svg>');
+  background-size: 200px;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Animation Styles */
+.animate-on-scroll {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease, visibility 0.6s ease;
+}
+
+.animate-on-scroll.has-animated {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Override for elements with specific animation types */
+.animate-on-scroll.animate__fadeInUp.has-animated {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-on-scroll.animate__fadeInDown.has-animated {
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+.animate-on-scroll.animate__fadeInLeft.has-animated {
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.animate-on-scroll.animate__fadeInRight.has-animated {
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+/* Keyframe animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.philosophy-visual {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.philosophy-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.philosophy-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+}
+
+.philosophy-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.philosophy-card .card-icon {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.philosophy-card:hover .card-icon {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+}
+
+.philosophy-card .card-content h4 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.philosophy-card .card-content p {
+  font-size: 15px;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.philosophy-content {
+  padding: 20px 0;
+}
+
+.section-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+}
+
+/* 
+---------------------------------------------
+Mission Section Styles
+--------------------------------------------- 
+*/
+.mission-section {
+  position: relative;
+}
+
+.mission-wrapper {
+  background: #fff;
+  border-radius: 30px;
+  padding: 60px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(102, 126, 234, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.mission-header {
+  margin-bottom: 50px;
+}
+
+.mission-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.mission-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  margin: 30px auto 0;
+  border-radius: 2px;
+}
+
+.mission-content {
+  margin-top: 40px;
+}
+
+.mission-points {
+  margin-top: 60px;
+}
+
+.mission-point {
+  background: #fff;
+  border-radius: 20px;
+  padding: 35px 30px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  height: 100%;
+}
+
+.mission-point:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+  border-color: rgba(102, 126, 234, 0.2);
+}
+
+.mission-point .point-icon {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.mission-point:hover .point-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+}
+
+.mission-point h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.mission-point p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* 
+---------------------------------------------
+Responsive Styles for Philosophy & Mission
+--------------------------------------------- 
+*/
+@media (max-width: 991px) {
+  .philosophy-visual {
+    margin-bottom: 40px;
+  }
+  
+  .philosophy-card {
+    padding: 25px;
+  }
+  
+  .philosophy-card .card-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .philosophy-card .card-icon i {
+    font-size: 50px !important;
+  }
+  
+  .philosophy-content h2 {
+    font-size: 32px !important;
+  }
+  
+  .mission-wrapper {
+    padding: 40px 25px;
+  }
+  
+  .mission-header h2 {
+    font-size: 32px !important;
+  }
+  
+  .mission-point {
+    padding: 30px 20px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .philosophy-section {
+    padding: 60px 0 !important;
+  }
+  
+  .philosophy-content {
+    margin-bottom: 40px;
+    padding: 0 15px;
+  }
+  
+  .philosophy-content h2 {
+    font-size: 28px !important;
+  }
+  
+  .philosophy-content p {
+    font-size: 16px !important;
+  }
+  
+  .philosophy-visual {
+    padding: 0 15px;
+  }
+  
+  .philosophy-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px 20px;
+  }
+  
+  .philosophy-card::before {
+    width: 100%;
+    height: 4px;
+    top: 0;
+    left: 0;
+  }
+  
+  .philosophy-card .card-icon {
+    margin-bottom: 15px;
+  }
+  
+  .mission-section {
+    padding: 60px 0 !important;
+  }
+  
+  .mission-wrapper {
+    padding: 30px 20px;
+  }
+  
+  .mission-header h2 {
+    font-size: 26px !important;
+  }
+  
+  .mission-content p {
+    font-size: 16px !important;
+  }
+  
+  .mission-point {
+    padding: 25px 20px;
+  }
+  
+  .mission-point .point-icon {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .mission-point .point-icon i {
+    font-size: 35px !important;
+  }
+  
+  .mission-point h4 {
+    font-size: 18px;
+  }
+  
+  .mission-point p {
+    font-size: 14px;
   }
 }
