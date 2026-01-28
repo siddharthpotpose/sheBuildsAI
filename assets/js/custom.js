@@ -74,6 +74,37 @@
 			items:1
 		}
       }
+	}).on('changed.owl.carousel', function(event) {
+		// Re-trigger animations on carousel slide change
+		var currentItem = $('.owl-banner .owl-item').eq(event.item.index);
+		var animatedElements = currentItem.find('.animate__animated');
+		
+		// Remove animation classes
+		animatedElements.each(function() {
+			var element = $(this);
+			var animationClasses = element.attr('class').match(/animate__\w+/g) || [];
+			
+			// Store animation classes
+			element.data('animation-classes', animationClasses);
+			
+			// Remove all animate classes
+			animationClasses.forEach(function(animClass) {
+				element.removeClass(animClass);
+			});
+		});
+		
+		// Force reflow
+		void currentItem[0].offsetWidth;
+		
+		// Re-add animation classes
+		animatedElements.each(function() {
+			var element = $(this);
+			var animationClasses = element.data('animation-classes') || [];
+			
+			animationClasses.forEach(function(animClass) {
+				element.addClass(animClass);
+			});
+		});
 	});
 
 	$('.owl-testimonials').owlCarousel({
@@ -227,6 +258,80 @@
 		
 		// Toggle current FAQ item
 		$faqItem.toggleClass('active');
+	});
+
+	// Scroll-triggered animations using Animate.css
+	$(document).ready(function() {
+		// Function to check if element is in viewport
+		function isElementInViewport(el) {
+			var rect = el.getBoundingClientRect();
+			return (
+				rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.85 &&
+				rect.bottom >= 0
+			);
+		}
+
+		// Function to add animation class when element is in viewport
+		function animateOnScroll() {
+			var animatedElements = document.querySelectorAll('.animate-on-scroll');
+			
+			animatedElements.forEach(function(element, index) {
+				if (isElementInViewport(element) && !element.classList.contains('animate__animated')) {
+					// Add animation classes with staggered delay based on index
+					var animationType = 'animate__fadeInUp';
+					var delay = (index % 3) * 0.2; // Stagger animations in groups of 3
+					
+					element.style.animationDelay = delay + 's';
+					element.classList.add('animate__animated', animationType);
+				}
+			});
+		}
+
+		// Initial check on page load
+		animateOnScroll();
+
+		// Check on scroll
+		$(window).on('scroll', function() {
+			animateOnScroll();
+		});
+
+		// Add hover effects for interactive elements
+		$('.service-item, .feature-item, .tech-item, .team-member, .events_item').hover(
+			function() {
+				$(this).addClass('animate__pulse');
+			},
+			function() {
+				$(this).removeClass('animate__pulse');
+			}
+		);
+
+		// Add animation to section headings
+		$('.section-heading').each(function(index) {
+			$(this).addClass('animate-on-scroll');
+		});
+
+		// Add animation to counters
+		$('.counter').each(function(index) {
+			$(this).addClass('animate-on-scroll');
+		});
+
+		// Add animation to step items
+		$('.step-item').each(function(index) {
+			$(this).addClass('animate-on-scroll');
+		});
+
+		// Add animation to FAQ items
+		$('.faq-item').each(function(index) {
+			$(this).addClass('animate-on-scroll');
+		});
+
+		// Add animation to event items
+		$('.events .item').each(function(index) {
+			$(this).addClass('animate-on-scroll');
+		});
+
+		// Add animation to contact form
+		$('#contact-form').addClass('animate-on-scroll');
 	});
 
 })(window.jQuery);
