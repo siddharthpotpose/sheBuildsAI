@@ -89,6 +89,7 @@ html, body {
   -ms-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -308,12 +309,15 @@ Header Style
 }
 
 .header-area {
-  position: absolute;
-  background-color: transparent;
-  top: 40px;
+  position: fixed;
+  background-color: #779FF6;
+  border-radius: 0px 0px 25px 25px;
+  height: 80px;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 100;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.15);
   -webkit-transition: all .5s ease 0s;
   -moz-transition: all .5s ease 0s;
   -o-transition: all .5s ease 0s;
@@ -343,8 +347,8 @@ Header Style
   border-right: 1px solid rgba(250, 250, 250, 0.3);
 }
 
-.background-header .main-nav .logo,
-.background-header .main-nav #search {
+.header-area .main-nav .logo,
+.header-area .main-nav #search {
   margin-top: 18px;
 }
 
@@ -419,9 +423,9 @@ Header Style
   letter-spacing: .25px;
 }
 
-.background-header .main-nav .nav {margin-top: 20px;}
+.header-area .main-nav .nav {margin-top: 20px;}
 
-.background-header .main-nav .nav li {
+.header-area .main-nav .nav li {
   height: 80px;
   line-height: 80px;
 }
@@ -456,7 +460,7 @@ Header Style
   display: none;
 }
 
-.background-header .main-nav .menu-trigger {
+.header-area .main-nav .menu-trigger {
   top: 20px;
 }
 
@@ -621,7 +625,7 @@ Header Style
     width: 100%;
   }
   .header-area {
-    background-color: transparent;
+    background-color: #779FF6;
     padding: 0px 15px;
     height: 80px;
     box-shadow: none;
@@ -2798,8 +2802,8 @@ Mission Section Styles
   position: relative;
   overflow: hidden;
 } */
-/* 
-.mission-wrapper::before {
+
+/* .mission-wrapper::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -3619,5 +3623,689 @@ Solution Stepper Styles
 
   .about-us .step-content p {
     font-size: 14px;
+  }
+}
+
+/* css main hero setion */
+/* =========================================================
+   SheBuildsAI – Global Variables
+   ========================================================= */
+:root {
+  --sbai-primary: #0A4D68;
+  --sbai-primary-light: #1B6B93;
+  --sbai-accent: #6C63FF;
+  --sbai-accent-light: #8B85FF;
+
+  --sbai-bg-light: #F6FAFC;
+  --sbai-bg-card: #FFFFFF;
+
+  --sbai-text-dark: #0F172A;
+  --sbai-text-mid: #475569;
+  --sbai-text-light: #94A3B8;
+
+  --sbai-success: #22C55E;
+  --sbai-border: #E2E8F0;
+
+  --sbai-radius-sm: 8px;
+  --sbai-radius-md: 12px;
+  --sbai-radius-lg: 20px;
+}
+
+/* =========================================================
+   Base Typography
+   ========================================================= */
+.sbai-body {
+  font-family: 'Inter', sans-serif;
+  color: var(--sbai-text-mid);
+  background-color: var(--sbai-bg-light);
+  line-height: 1.7;
+}
+
+.sbai-h1,
+.sbai-h2,
+.sbai-h3,
+.sbai-h4,
+.sbai-h5 {
+  color: var(--sbai-text-dark);
+  font-weight: 700;
+}
+
+.sbai-h1 { font-size: 56px; }
+.sbai-h2 { font-size: 40px; }
+.sbai-h3 { font-size: 28px; }
+.sbai-h4 { font-size: 22px; }
+.sbai-h5 { font-size: 18px; }
+
+@media (max-width: 768px) {
+  .sbai-h1 { font-size: 40px; }
+  .sbai-h2 { font-size: 32px; }
+}
+
+/* =========================================================
+   Buttons
+   ========================================================= */
+.sbai-btn-primary {
+  background: var(--sbai-accent);
+  color: #fff;
+  padding: 15px 34px;
+  border-radius: var(--sbai-radius-md);
+  font-weight: 600;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 12px 30px rgba(108, 99, 255, 0.25);
+  transition: all 0.25s ease;
+}
+
+.sbai-btn-primary:hover {
+  background: var(--sbai-accent-light);
+  transform: translateY(-2px);
+}
+
+.sbai-btn-secondary {
+  background: transparent;
+  border: 2px solid var(--sbai-primary);
+  color: var(--sbai-primary);
+  padding: 15px 34px;
+  border-radius: var(--sbai-radius-md);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.sbai-btn-secondary:hover {
+  background: var(--sbai-primary);
+  color: #fff;
+}
+
+/* =========================================================
+   Buttons - Responsive Styles
+   ========================================================= */
+
+/* Tablet devices */
+@media (max-width: 991px) {
+  .sbai-btn-primary,
+  .sbai-btn-secondary {
+    padding: 13px 28px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+  .sbai-btn-primary,
+  .sbai-btn-secondary {
+    padding: 12px 24px;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .sbai-hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .sbai-btn-primary,
+  .sbai-btn-secondary {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   Hero Section
+   ========================================================= */
+.sbai-hero {
+  background: linear-gradient(180deg, #F6FAFC 0%, #EEF5F9 100%);
+  padding: 100px 0 120px;
+}
+
+.sbai-hero-title {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--sbai-text-dark);
+  margin-bottom: 20px;
+}
+
+.sbai-hero-highlight {
+  color: var(--sbai-accent);
+}
+
+.sbai-hero-subtitle {
+  font-size: 19px;
+  color: var(--sbai-text-mid);
+  max-width: 520px;
+  margin-bottom: 30px;
+}
+
+.sbai-hero-trust {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--sbai-text-mid);
+}
+
+.sbai-check {
+  color: var(--sbai-success);
+  font-size: 18px;
+}
+
+/* =========================================================
+   Hero Visual Section - Professional Image Layout
+   ========================================================= */
+.sbai-hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 20px;
+}
+
+.sbai-hero-visual img {
+  width: auto;
+  max-width: 280px;
+  height: auto;
+  max-height: 400px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  background: #fff;
+  padding: 8px;
+}
+
+.sbai-hero-visual img:first-child {
+  transform: translateY(20px);
+  z-index: 1;
+}
+
+.sbai-hero-visual img:last-child {
+  transform: translateY(-20px);
+  z-index: 2;
+}
+
+.sbai-hero-visual img:hover {
+  transform: translateY(0) scale(1.08);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+  z-index: 10;
+}
+
+/* Decorative elements behind images */
+.sbai-hero-visual::before {
+  content: '';
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: linear-gradient(135deg, rgba(119, 159, 246, 0.12) 0%, rgba(162, 240, 254, 0.12) 100%);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.sbai-hero-visual::after {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, rgba(119, 159, 246, 0.08) 0%, rgba(162, 240, 254, 0.08) 100%);
+  border-radius: 50%;
+  top: 15%;
+  right: 5%;
+  z-index: 0;
+}
+
+/* =========================================================
+   Hero Section - Responsive Styles
+   ========================================================= */
+
+/* Tablet devices */
+@media (max-width: 991px) {
+  .sbai-hero {
+    padding: 120px 0 100px;
+  }
+  
+  .sbai-hero-title {
+    font-size: 42px;
+    line-height: 1.2;
+  }
+  
+  .sbai-hero-subtitle {
+    font-size: 17px;
+    max-width: 100%;
+  }
+  
+  .sbai-hero-trust {
+    font-size: 13px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+  .sbai-hero {
+    padding: 100px 0 80px;
+  }
+  
+  .sbai-hero-title {
+    font-size: 32px;
+    line-height: 1.25;
+    margin-bottom: 15px;
+  }
+  
+  .sbai-hero-subtitle {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+  
+  .sbai-hero-trust {
+    font-size: 12px;
+    gap: 8px;
+  }
+  
+  .sbai-check {
+    font-size: 16px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .sbai-hero {
+    padding: 120px 0 70px;
+  }
+  
+  .sbai-hero-title {
+    font-size: 40px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  
+  .sbai-hero-subtitle {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  
+  .sbai-hero-trust {
+    font-size: 11px;
+    gap: 6px;
+  }
+  
+  .sbai-check {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   Hero Visual Section - Responsive Styles
+   ========================================================= */
+
+/* Tablet devices */
+@media (max-width: 991px) {
+  .sbai-hero-visual {
+    flex-direction: row;
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .sbai-hero-visual img {
+    max-width: 240px;
+    max-height: 350px;
+    padding: 6px;
+  }
+  
+  .sbai-hero-visual img:first-child {
+    transform: translateY(15px);
+  }
+  
+  .sbai-hero-visual img:last-child {
+    transform: translateY(-15px);
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+  .sbai-hero-visual {
+    flex-direction: column;
+    gap: 25px;
+    padding: 10px;
+  }
+  
+  .sbai-hero-visual img {
+    max-width: 100%;
+    max-height: 380px;
+    padding: 6px;
+  }
+  
+  .sbai-hero-visual img:first-child {
+    transform: none;
+  }
+  
+  .sbai-hero-visual img:last-child {
+    transform: none;
+  }
+  
+  .sbai-hero-visual img:hover {
+    transform: scale(1.03);
+  }
+  
+  .sbai-hero-visual::before,
+  .sbai-hero-visual::after {
+    display: none;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .sbai-hero-visual {
+    gap: 20px;
+    padding: 5px;
+  }
+  
+  .sbai-hero-visual img {
+    max-width: 100%;
+    max-height: 320px;
+    padding: 5px;
+    border-radius: 12px;
+  }
+  
+  .sbai-hero-visual img:hover {
+    transform: scale(1.02);
+  }
+}
+
+/* =========================================================
+   Phone / AI Demo UI
+   ========================================================= */
+.sbai-phone {
+  width: 320px;
+  height: 480px;
+  background: linear-gradient(180deg, var(--sbai-primary), #083B52);
+  border-radius: 34px;
+  padding: 16px;
+  box-shadow: 0 40px 90px rgba(10, 77, 104, 0.35);
+}
+
+.sbai-phone-screen {
+  background: var(--sbai-bg-card);
+  height: 100%;
+  border-radius: 26px;
+  padding: 24px;
+}
+
+.sbai-avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--sbai-accent), var(--sbai-accent-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  color: #fff;
+  margin: 24px auto 14px;
+}
+
+.sbai-ai-message {
+  background: #F1F5F9;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: var(--sbai-text-mid);
+  line-height: 1.6;
+  border-left: 4px solid var(--sbai-accent);
+}
+
+/* =========================================================
+   Phone / AI Demo UI - Responsive Styles
+   ========================================================= */
+
+/* Tablet devices */
+@media (max-width: 991px) {
+  .sbai-phone {
+    width: 280px;
+    height: 420px;
+  }
+  
+  .sbai-avatar {
+    width: 76px;
+    height: 76px;
+    font-size: 32px;
+    margin: 20px auto 12px;
+  }
+  
+  .sbai-ai-message {
+    font-size: 13px;
+    padding: 12px 14px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 767px) {
+  .sbai-phone {
+    width: 260px;
+    height: 380px;
+    margin: 0 auto;
+  }
+  
+  .sbai-phone-screen {
+    padding: 20px;
+  }
+  
+  .sbai-avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+    margin: 16px auto 10px;
+  }
+  
+  .sbai-ai-message {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .sbai-phone {
+    width: 240px;
+    height: 350px;
+  }
+  
+  .sbai-phone-screen {
+    padding: 16px;
+  }
+  
+  .sbai-avatar {
+    width: 64px;
+    height: 64px;
+    font-size: 26px;
+    margin: 14px auto 8px;
+  }
+  
+  .sbai-ai-message {
+    font-size: 11px;
+    padding: 8px 10px;
+    line-height: 1.5;
+  }
+}
+
+
+/* =========================================================
+   Privacy Policy / Terms Pages
+   ========================================================= */
+.sbai-legal-section {
+  padding: 100px 0;
+  background: #fff;
+}
+
+.sbai-legal-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sbai-legal-heading h6 {
+  color: var(--sbai-text-light);
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.sbai-legal-heading h2 {
+  color: var(--sbai-text-dark);
+  margin-top: 10px;
+}
+
+.sbai-policy-section {
+  margin-bottom: 50px;
+}
+
+.sbai-policy-section h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.sbai-policy-section p {
+  color: var(--sbai-text-mid);
+}
+
+.sbai-policy-section ul {
+  padding-left: 18px;
+}
+
+.sbai-policy-section ul li {
+  margin-bottom: 10px;
+  color: var(--sbai-text-mid);
+}
+
+/* =========================================================
+   Contact Box
+   ========================================================= */
+.sbai-contact-box {
+  background: #F8FAFC;
+  padding: 30px;
+  border-radius: var(--sbai-radius-md);
+  border: 1px solid var(--sbai-border);
+}
+
+.sbai-contact-box h5 {
+  margin-bottom: 6px;
+}
+
+.sbai-contact-box a {
+  color: var(--sbai-accent);
+  text-decoration: none;
+}
+
+.sbai-contact-box a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.sbai-footer {
+  background: #071A2B;
+  color: #CBD5E1;
+  padding: 60px 0 30px;
+}
+
+.sbai-footer a {
+  color: #CBD5E1;
+  text-decoration: none;
+}
+
+.sbai-footer a:hover {
+  color: #fff;
+}
+
+.sbai-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 30px;
+  padding-top: 20px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* =========================================================
+   Hero Carousel Styles
+   ========================================================= */
+.sbai-hero-carousel {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.heroSwiper {
+  width: 100%;
+  height: 100%;
+  --swiper-pagination-color: #667eea;
+  --swiper-pagination-bullet-inactive-color: #ccc;
+  --swiper-pagination-bullet-inactive-opacity: 0.5;
+}
+
+.heroSwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.heroSwiper .swiper-slide:hover {
+  transform: translateY(-10px);
+}
+
+.carousel-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.swiper-pagination {
+  position: relative;
+  margin-top: 20px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #ddd;
+  opacity: 0.5;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #667eea;
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-image {
+    height: 300px;
+  }
+  
+  .sbai-hero-carousel {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-image {
+    height: 250px;
   }
 }

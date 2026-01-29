@@ -10,17 +10,18 @@
     });
 
 
-	$(window).scroll(function() {
-	  var scroll = $(window).scrollTop();
-	  var box = $('.header-text').height();
-	  var header = $('header').height();
+	// Header is now fixed by default - no scroll behavior needed
+	// $(window).scroll(function() {
+	//   var scroll = $(window).scrollTop();
+	//   var box = $('.header-text').height();
+	//   var header = $('header').height();
 
-	  if (scroll >= box - header) {
-	    $("header").addClass("background-header");
-	  } else {
-	    $("header").removeClass("background-header");
-	  }
-	})
+	//   if (scroll >= box - header) {
+	//     $("header").addClass("background-header");
+	//   } else {
+	//     $("header").removeClass("background-header");
+	//   }
+	// })
 
 	var width = $(window).width();
 		$(window).resize(function() {
@@ -134,8 +135,8 @@
 	}
 
 
-	// Menu elevator animation
-	$('.scroll-to-section a[href*=\\#]:not([href=\\#])').on('click', function() {
+	// Menu elevator animation - smooth scrolling for all nav links
+	$('.header-area .nav a[href*=\\#]:not([href=\\#])').on('click', function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 			var target = $(this.hash);
 			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
@@ -143,8 +144,8 @@
 				var width = $(window).width();
 				if(width < 767) {
 					$('.menu-trigger').removeClass('active');
-					$('.header-area .nav').slideUp(200);	
-				}				
+					$('.header-area .nav').slideUp(200);
+				}
 				$('html,body').animate({
 					scrollTop: (target.offset().top) - 80
 				}, 700);
@@ -155,22 +156,22 @@
 
 	$(document).ready(function () {
 	    $(document).on("scroll", onScroll);
-	    
-	    //smoothscroll
-	    $('.scroll-to-section a[href^="#"]').on('click', function (e) {
+
+	    //smoothscroll for nav links
+	    $('.header-area .nav a[href^="#"]').on('click', function (e) {
 	        e.preventDefault();
 	        $(document).off("scroll");
-	        
-	        $('.scroll-to-section a').each(function () {
+
+	        $('.header-area .nav a').each(function () {
 	            $(this).removeClass('active');
 	        })
 	        $(this).addClass('active');
-	      
+
 	        var target = this.hash,
 	        menu = target;
 	       	var target = $(this.hash);
 	        $('html, body').stop().animate({
-	            scrollTop: (target.offset().top) - 79
+	            scrollTop: (target.offset().top) - 80
 	        }, 500, 'swing', function () {
 	            window.location.hash = target;
 	            $(document).on("scroll", onScroll);
@@ -332,6 +333,35 @@
 
 		// Add animation to contact form
 		$('#contact-form').addClass('animate-on-scroll');
+
+		// Initialize Swiper Carousel for Hero Section
+		const heroSwiper = new Swiper('.heroSwiper', {
+			loop: true,
+			autoplay: {
+				delay: 4000,
+				disableOnInteraction: false,
+			},
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true
+			},
+			speed: 800,
+			breakpoints: {
+				320: {
+					slidesPerView: 1,
+				},
+				768: {
+					slidesPerView: 1,
+				},
+				1024: {
+					slidesPerView: 1,
+				}
+			}
+		});
 	});
 
 })(window.jQuery);

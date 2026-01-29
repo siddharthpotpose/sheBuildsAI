@@ -11,7 +11,7 @@
   <title>SheBuildsAI - AI-Powered Clinic Solutions</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 
   <!-- Additional CSS Files -->
@@ -48,7 +48,7 @@ https://shebuildsai.co
   <!-- ***** Preloader End ***** -->
 
   <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
+  <header class="header-area">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -70,11 +70,11 @@ https://shebuildsai.co
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
               <li class="" style="animation-delay: 0.1s;"><a
-                  href="#top" class="active">Home</a></li>
+                  href="#home" class="active">Home</a></li>
               <li class="" style="animation-delay: 0.2s;"><a
-                  href="#services">Services</a></li>
+                  href="#how-it-works">Services</a></li>
               <li class="" style="animation-delay: 0.3s;"><a
-                  href="#about">About Us</a></li>
+                  href="#services">About Us</a></li>
 
               <!-- <li class="" style="animation-delay: 0.5s;"><a
                   href="#features">Features</a></li> -->
@@ -96,65 +96,95 @@ https://shebuildsai.co
   </header>
   <!-- ***** Header Area End ***** -->
 
-  <div class="main-banner" id="top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="owl-carousel owl-banner">
-            <div class="item item-1">
-              <div class="header-text">
-                <h2 class="animate__animated animate__zoomIn animate__slower">Transform Your Appointment Booking
-                  Experience</h2>
-                <p class="animate__animated animate__zoomIn animate__slower" style="animation-delay: 0.3s;">Say goodbye
-                  to the traditional way of booking doctor appointments. Experience our new self check-in system that
-                  streamlines the entire process - from booking to arrival. Save time, reduce wait times, and enjoy a
-                  seamless healthcare journey with AI-powered automation.</p>
-                <div class="buttons">
-                  <div class="main-button animate__animated animate__zoomIn animate__slow"
-                    style="animation-delay: 0.6s;">
-                    <a href="#">Request Demo</a>
-                  </div>
-                  <!-- <div class="icon-button animate__animated animate__zoomIn animate__slow"
-                    style="animation-delay: 0.8s;">
-                    <a href="#"><i class="fa fa-play"></i> What's SheBuildsAI?</a>
-                  </div> -->
-                </div>
+
+
+<section class="sbai-hero" id="home">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- =====================
+           Left Content
+      ====================== -->
+      <div class="col-lg-7">
+        <div class="sbai-hero-content">
+
+          <h1 class="sbai-hero-title">
+            Transform Your <span class="sbai-hero-highlight">Appointment Booking</span><br>
+            Experience with AI
+          </h1>
+
+          <p class="sbai-hero-subtitle">
+            Your AI receptionist operates 24/7, managing appointments, and reminders so your team can focus on delivering exceptional patient care.
+          </p>
+
+          <div class="sbai-hero-actions">
+            <a  href="#contact" class="sbai-btn-primary">Book Demo →</a>
+            <!-- <a href="#calculator" class="sbai-btn-secondary ms-3">Calculate Savings</a> -->
+          </div>
+
+          <!-- <div class="sbai-hero-trust mt-4">
+            <span class="sbai-check">✓</span>
+            Trusted by 47+ medical practices across India
+          </div> -->
+
+        </div>
+      </div>
+
+      <!-- =====================
+           Right Visual
+      ====================== -->
+      <div class="col-lg-5 text-center mt-5 mt-lg-0">
+        <div class="sbai-hero-carousel">
+          <!-- Swiper Carousel -->
+          <div class="swiper heroSwiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <img src="assets/images/hero-section-1.jpeg" alt="AI-powered appointment booking interface showing patient scheduling" class="carousel-image">
+              </div>
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <img src="assets/images/hero-section-2.jpeg" alt="AI receptionist managing clinic appointments and patient communications" class="carousel-image">
+              </div>
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <img src="assets/images/all-ai.png" alt="Clinic automation dashboard with real-time analytics" class="carousel-image">
               </div>
             </div>
-            <!-- <div class="item item-2">
-              <div class="header-text">
-                <span class="category" style="visibility: hidden;">AI Solutions</span>
-                <h2 class="animate__animated animate__zoomIn animate__slower">Transform Your Clinic with Intelligent Automation</h2>
-                <p class="animate__animated animate__zoomIn animate__slower" style="animation-delay: 0.3s;">Experience the future of healthcare with our AI-powered booking agents, smart scheduling, and
-                  automated patient management systems designed specifically for modern clinics.</p>
-                <div class="buttons">
-                  <div class="main-button animate__animated animate__zoomIn animate__slow" style="animation-delay: 0.6s;">
-                  </div>
-                  <div class="icon-button animate__animated animate__zoomIn animate__slow" style="animation-delay: 0.8s;">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="item item-3">
-              <div class="header-text" style="visibility: hidden;">
-                <h2>AI-Powered Healthcare Solutions</h2>
-                <p>Streamline your clinic operations with intelligent automation, reduce administrative burden, and
-                  focus on what matters most - patient care.</p>
-                <div class="buttons">
-                  <div class="main-button">
-                    <a href="#">Request Demo</a>
-                  </div>
-                  <div class="icon-button">
-                    <a href="#"><i class="fa fa-play"></i> Watch Demo</a>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+            <!-- Navigation dots -->
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
+
+
+          <!-- <div class="sbai-phone">
+            <div class="sbai-phone-screen">
+
+              <div class="sbai-call-ui text-center">
+                <div class="sbai-avatar">👤</div>
+
+                <h5 class="mt-3 mb-1">Patient Calling</h5>
+                <p class="text-muted mb-3">Connected • 00:24</p>
+
+                <div class="sbai-ai-message">
+                  “I can book your appointment for Friday at 2 PM or Monday at 10 AM.
+                  Which works better?”
+                </div>
+              </div>
+
+            </div>
+          </div> -->
+
+        </div>
+      </div>
+
     </div>
   </div>
+</section>
+
+
+
 
   <!-- service section -->
 
@@ -579,11 +609,11 @@ https://shebuildsai.co
             intelligent automation, booking agents, and smart scheduling systems.
           </p>
           <div class="footer-social mb-2">
-            <!-- <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a> -->
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <!-- <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a> -->
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
             <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <!-- <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a> -->
+            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
 
@@ -592,7 +622,7 @@ https://shebuildsai.co
           <h4>Quick Links</h4>
           <ul>
             <li><a href="#top">Home</a></li>
-            <li><a href="#services">Services</a></li> 
+            <li><a href="#services">Services</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#contact">Book Now</a></li>
           </ul>
@@ -653,6 +683,8 @@ https://shebuildsai.co
   <!-- Bootstrap core JavaScript -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  <!-- Swiper JS for Carousel -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   <script src="assets/js/isotope.min.js"></script>
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/counter.js"></script>
