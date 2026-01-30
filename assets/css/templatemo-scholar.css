@@ -435,7 +435,8 @@ Header Style
 }
 .header-area .main-nav .nav li a.active {
   color: #fff;
-  background-color: rgba(255, 255, 255, 0.10);
+  /* background-color: rgba(255, 255, 255, 0.10); */
+  background-color: #5c8ae9eb;
   opacity: 1;
 }
 
@@ -3685,7 +3686,9 @@ Solution Stepper Styles
    Buttons
    ========================================================= */
 .sbai-btn-primary {
-  background: var(--sbai-accent);
+  /* background: var(--sbai-accent); */
+      background: #074e84;
+    text-shadow: 0 0 black;
   color: #fff;
   padding: 15px 34px;
   border-radius: var(--sbai-radius-md);
@@ -3762,7 +3765,7 @@ Solution Stepper Styles
    ========================================================= */
 .sbai-hero {
   background: linear-gradient(180deg, #F6FAFC 0%, #EEF5F9 100%);
-  padding: 100px 0 120px;
+  padding: 140px 0 120px;
 }
 
 .sbai-hero-title {
@@ -3774,7 +3777,9 @@ Solution Stepper Styles
 }
 
 .sbai-hero-highlight {
-  color: var(--sbai-accent);
+  /* color: var(--sbai-accent); */
+      color: #074e84;
+    text-shadow: 0 0 black;
 }
 
 .sbai-hero-subtitle {
